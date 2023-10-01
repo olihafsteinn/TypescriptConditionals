@@ -1,11 +1,11 @@
 
 
 interface Person{
-    name:string;
-    dateOfBirth:string;
-    children:number;
-    country:string;
-    knowsHowToProgram:boolean;
+    name: string;
+    dateOfBirth: string;
+    children: number;
+    country: string;
+    knowsHowToProgram: boolean;
 };
 
 const people: Person[] = [
