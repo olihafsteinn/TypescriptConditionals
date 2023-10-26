@@ -38,22 +38,21 @@ const people = [
     },
 ];
 // Use a ternary operator to output if the 2nd person’s name is longer than 5 characters.
-document.addEventListener('DOMContentLoaded', function () {
-    let result;
-    result = people[2].name.length > 5 ? "Long name" : "Short name";
-    console.log(result);
-});
-// let result:string
-// result = people[2].name.length > 5 ? "Long name" : "Short name";
-// console.log(result)
-people[2].name.length > 10 ? console.log(people[2].name + " is longer than 5 characters") : console.log(people[2].name + " is not longer than 5 characters");
+let result;
+result = people[2].name.length > 5 ? "Long name" : "Short name";
+console.log(result);
+// if the name is longer than 5 characters it logs the name + is longer than 5 characters, else logs name + is not longer than 5 characters
+people[2].name.length > 5 ? console.log(people[2].name + " is longer than 5 characters") : console.log(people[2].name + " is not longer than 5 characters");
 // Create a statement that checks the 2nd person in the array for their nationality. If the person’s country is Iceland, output “Hæ”, if he/she is from Spain output “Hola”, if he/she is from Korea output “여보세요”). If the country is none of the above, output “Hello”. Tip: a switch statement might be a good fit for this task.
 // If statement
+// Check if the country of the person at index 3 is "Iceland"
 if (people[3].country === "Iceland") {
     console.log("Hæ " + people[3].name);
+    // If not Iceland, check if the country is "Spain"
 }
 else if (people[3].country === "Spain") {
     console.log("Hola " + people[3].name);
+    // If not Spain, check if the country is "Korea"
 }
 else if (people[3].country === "Korea") {
     console.log("여보세요 " + people[3].name);
@@ -75,6 +74,7 @@ for (const person of people) {
     }
 }
 // Create a statement that checks if the 1st person and the 4th person in the array both know how to program. If yes, output “Yay!”, if not output “LMGTFY”.
+// Checks if person at index 1 and 4 know programming if they know how it logs Yay, else LMGTFT
 if (people[1].knowsHowToProgram && people[4].knowsHowToProgram === true) {
     console.log("Yay");
 }
@@ -82,8 +82,11 @@ else {
     console.log("LMGTFY");
 }
 // Does the 2nd person have the same amount of kids as the 3rd?
+// Assign the number of children for the first person in the 'people' array to 'amountOfKids'
 const amountOfKids = (people[1].children);
+// Assign the number of children for the second person in the 'people' array to 'amountOfKids2'
 const amountOfKids2 = (people[2].children);
+// Compare the number of children and log a message based on the result
 if (amountOfKids > amountOfKids2) {
     console.log(people[1].name + " has more children than " + people[2].name);
 }
@@ -93,6 +96,8 @@ else if (amountOfKids < amountOfKids2) {
 else {
     console.log(people[2].name + " and " + people[1].name + " have the same amount of kids");
 }
+// Is the first person older than the last person?
+// Function to calculate age based on the provided birth date
 function calculateAge(birthDate) {
     const today = new Date();
     const birthDateObj = new Date(birthDate);
@@ -105,8 +110,10 @@ function calculateAge(birthDate) {
     }
     return age;
 }
+// Calculate ages for two people from the 'people' array
 const age1 = calculateAge(people[1].dateOfBirth);
 const age2 = calculateAge(people[2].dateOfBirth);
+// Compare ages and log a message based on the result
 if (age1 > age2) {
     console.log(`${people[1].name} is older than ${people[2].name}.`);
 }
@@ -116,14 +123,3 @@ else if (age1 < age2) {
 else {
     console.log(`${people[2].name} and ${people[1].name} are the same age.`);
 }
-//  name,Date of birth,Children,Country,Knows how to program
-//  Darda Dilworth,9/2/1996,5,Canada,true
-//  Xenia Kendell,10/10/1980,2,Indonesia,false
-//  Sybille Nickless,12/29/2000,4,Armenia,true
-//  Philip Pickup,12/2/1989,1,China,true
-//  Jamaal Ondrich,3/13/1986,0,Indonesia,true
-// type MyObject = {
-//     name: string;
-//     age: number;
-//      Add more properties as needed
-//   };
